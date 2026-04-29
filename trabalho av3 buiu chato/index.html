@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Atividade para o Buiu</title>
+</head>
+<script>
+// 🔥 Defina as datas das suas metas aqui
+const metas = {
+    1: new Date("2026-11-01T00:00:00"), // ENEM (exemplo)
+    2: new Date("2026-12-15T00:00:00"), // fim do ano letivo
+    3: new Date("2028-01-01T00:00:00"), // comprar carro
+    4: new Date("2027-12-01T00:00:00")  // shape verão
+};
+
+function atualizarContagem() {
+    const agora = new Date();
+
+    for (let id in metas) {
+        const diferenca = metas[id] - agora;
+
+        if (diferenca <= 0) {
+            document.getElementById("countdown" + id).innerText = "Meta alcançada 🎉";
+            continue;
+        }
+
+        let dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        let horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+        let minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+        let segundos = Math.floor((diferenca / 1000) % 60);
+
+        document.getElementById("countdown" + id).innerText =
+            `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+}
+
+// atualiza a cada segundo
+setInterval(atualizarContagem, 1000);
+
+// roda uma vez ao carregar
+atualizarContagem();
+</script>
+
+<body>
+    <header class="container text-center">
+        <img src="img/IMG_1609.jpg" alt="avatar de Daisuke" class="rounded-circle" width="150" height="150"
+            srcset="">
+        <p class="lead">Davi Daisuke 3E</p>
+        <h1>Meus Objetivos</h1>
+    </header>
+    <main class="container mt-5">
+        <h2>4 Objetivos para longo prazo</h2>
+        <div class="row">
+            <!-- Projeto 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/-5aaa4f5680e5e.webp" class="card-img-top" alt="Imagem do projeto de biblioteca virtual">
+                    <div class="card-body">
+                        <h5 class="card-title">Passar em engenharia civil na UFPR</h5>
+                        <p class="card-text">
+                        </p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal1">Cronômetro</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Projeto 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/ceasa06-1024x683.jpg" class="card-img-top" alt="Imagem do projeto de biblioteca virtual">
+                    <div class="card-body">
+                        <h5 class="card-title">Começar a trabalhar ao final do ano letivo</h5>
+                        <p class="card-text">
+                        </p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal2">Cronômetro</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Projeto 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/D_NQ_NP_608495-MLB110286536847_042026-O-audi-a4-20tfsi-2021.webp" class="card-img-top" alt="Imagem do projeto de biblioteca virtual">
+                    <div class="card-body">
+                        <h5 class="card-title">Comprar meu primeiro carro dos sonhos
+                        </h5
+                        <p class="card-text">
+                        </p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal3">Cronômetro</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Projeto 4 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/baixados.webp" class="card-img-top" alt="Imagem do projeto de biblioteca virtual">
+                    <div class="card-body">
+                        <h5 class="card-title">Projeto shape verão 2K27</h5>
+                        <p class="card-text">
+                        </p>
+                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modal4">Cronômetro</button>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+     </main>
+    <!-- Modal 1 -->
+    <div class="modal" id="modal1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+               <div class="text-center">
+    <h5>Tempo restante:</h5>
+    <h2 id="countdown1">Carregando...</h2>
+</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 2 -->
+    <div class="modal" id="modal2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <h2 id="countdown2">Carregando...</h2>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal" id="modal3" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <h2 id="countdown3">Carregando...</h2>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container py-5">
+        <h2>Entre em contato: @davidaisuke</h2>
+        <div>
+            <i class="bi bi-github"></i>
+            <a href="https://github.com/davidaisukeOG">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modal 4 -->
+    <div class="modal" id="modal4" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="text-center">
+    <h5>Tempo restante:</h5>
+    <h2 id="countdown4">Carregando...</h2>
+</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
